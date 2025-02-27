@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Mein Alter Walter!</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0px 0px 10px #ff00ff;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .hidden {
+            display: none;
+        }
+        .gif-container img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.5);
+        }
+        .playlist-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            background: #ff00ff;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.7);
+            transition: 0.3s;
+        }
+        .playlist-link:hover {
+            background: #bb00bb;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 1);
+        }
+        .octopus-fact {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #ff00ff;
+        }
+        #riddle-section input {
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        #riddle-section button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #ff00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #riddle-section button:hover {
+            background: #bb00bb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Happy Birthday, Mein Alter Walter! 🎉</h1>
+    <p>Before you unlock your birthday surprise, answer this riddle:</p>
+
+    <div id="riddle-section">
+        <p><strong>I have three hearts but no love to give,</strong><br>
+        <strong>I have eight arms but never hug.</strong><br>
+        <strong>What am I?</strong></p>
+
+        <input type="text" id="riddle-answer" placeholder="Type your answer...">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="riddle-message" style="color: red; font-weight: bold;"></p>
+    </div>
+
+    <!-- Hidden birthday content -->
+    <div id="birthday-content" class="hidden">
+        <p>Correct! You truly understand the beauty of cephalopods. Now, enjoy your birthday message!</p>
+
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Funny Octopus">
+        </div>
+
+        <p>"Time is NOT running out—your birthday party has just begun!"</p>
+
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DX2ogDiL6nZJr" class="playlist-link" target="_blank">🎶 Click for a Muse Birthday Playlist! 🎶</a>
+
+        <p class="octopus-fact">Fun Fact: Octopuses have **three hearts**, just like your love for Muse, Exploding Kittens, and languages!</p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("riddle-answer").value.toLowerCase();
+            var message = document.getElementById("riddle-message");
+            var content = document.getElementById("birthday-content");
+
+            if (answer === "octopus") {
+                message.style.color = "green";
+                message.innerHTML = "Correct! Unlocking your surprise...";
+                document.getElementById("riddle-section").style.display = "none";
+                content.classList.remove("hidden");
+            } else {
+                message.innerHTML = "Nope! Try again. Think ocean, think tentacles...";
+            }
+        }
+    </script>
+
+</body>
+</html>
