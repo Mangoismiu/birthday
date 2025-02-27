@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: #f0f8ff;
+        }
+        #riddle, #message { display: none; }
+        button { padding: 10px 20px; font-size: 16px; }
+        iframe { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Happy Birthday, Mein Alter Walter! 🎉</h1>
+    <p>Before you unlock your birthday surprise, solve this riddle:</p>
+    
+    <p><strong>I have three hearts, eight arms, and I’m a master of disguise. What am I?</strong></p>
+    
+    <input type="text" id="answer" placeholder="Your answer here">
+    <button onclick="checkAnswer()">Submit</button>
+    
+    <p id="riddle" style="color: red;">Wrong answer! Try again. 🧐</p>
+    
+    <div id="message">
+        <h2>🎂 Surprise Unlocked! 🎂</h2>
+        <p><strong>Happy birthday, Rebs! Or was izh zhis one mein herr? ALLES GUTE ZUM GEBURTSTAG!! 🎉🎶</strong></p>
+        
+        <!-- Spotify Playlist -->
+        <p>Here’s a special birthday playlist for you! 🎵</p>
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/playlist/1vMuDl2i7rR3S9xifg5yS9?utm_source=generator" 
+            width="100%" height="352" frameBorder="0" 
+            allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            let answer = document.getElementById("answer").value.toLowerCase();
+            if (answer === "octopus") {
+                document.getElementById("message").style.display = "block";
+                document.getElementById("riddle").style.display = "none";
+            } else {
+                document.getElementById("riddle").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
